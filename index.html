@@ -294,6 +294,203 @@
             transform: translateY(-5px);
         }
         
+        /* New Components Section Styles */
+        .components-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .components-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .components-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .components-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .components-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .components-info {
+            padding: 20px;
+        }
+        
+        .component-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .component-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .component-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .component-icon {
+            font-size: 24px;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .component-item h4 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .component-item p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        /* Interactive Compressor Diagram */
+        .compressor-diagram {
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        .diagram-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .diagram-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .diagram-point {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .diagram-point:hover {
+            transform: scale(1.5);
+            background-color: var(--accent, #e74c3c);
+        }
+        
+        .point-1 { top: 30%; left: 40%; }
+        .point-2 { top: 50%; left: 60%; }
+        .point-3 { top: 70%; left: 35%; }
+        .point-4 { top: 45%; left: 25%; }
+        
+        .point-info {
+            position: absolute;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 10;
+        }
+        
+        .point-1 .point-info { top: -100px; left: 50px; }
+        .point-2 .point-info { top: -80px; right: 50px; }
+        .point-3 .point-info { bottom: -100px; left: 50px; }
+        .point-4 .point-info { top: 20px; right: 50px; }
+        
+        .diagram-point:hover .point-info {
+            opacity: 1;
+        }
+        
+        .point-info h4 {
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .point-info p {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        /* Refrigerator Types Section */
+        .fridge-types {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .type-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .type-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .type-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .type-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .type-card:hover .type-image img {
+            transform: scale(1.1);
+        }
+        
+        .type-content {
+            padding: 20px;
+        }
+        
+        .type-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .type-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
         /* Responsive Styles */
         @media (max-width: 768px) {
             .floating-call,
@@ -330,6 +527,24 @@
             .back-to-top {
                 right: 80px;
                 bottom: 20px;
+            }
+            
+            .components-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .component-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .diagram-point {
+                width: 15px;
+                height: 15px;
+            }
+            
+            .point-info {
+                width: 150px;
+                padding: 10px;
             }
         }
         
@@ -368,6 +583,7 @@
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#components">Components</a></li>
                 <li><a href="#why-us">Why Choose Us</a></li>
                 <li><a href="#areas">Areas We Serve</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -538,7 +754,148 @@
                 </div>
             </div>
         </div>
-    </section>  
+    </section>
+
+    <!-- New Components Section -->
+    <section class="components-section" id="components">
+        <div class="container">
+            <div class="section-title">
+                <h2>Refrigerator Components We Repair</h2>
+                <p>Understanding the key components of your refrigerator helps diagnose issues faster</p>
+            </div>
+            
+            <div class="components-container">
+                <div class="components-image">
+                    <img src="https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Refrigerator Compressor">
+                </div>
+                <div class="components-info">
+                    <h3>Compressor - The Heart of Your Refrigerator</h3>
+                    <p>The compressor is the most critical component that circulates refrigerant throughout the system. When it fails, your refrigerator stops cooling completely.</p>
+                    
+                    <div class="component-list">
+                        <div class="component-item">
+                            <div class="component-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <h4>Compressor</h4>
+                            <p>Circulates refrigerant and maintains pressure in the cooling system</p>
+                        </div>
+                        <div class="component-item">
+                            <div class="component-icon">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                            <h4>Condenser Coils</h4>
+                            <p>Release heat from the refrigerant to the surrounding air</p>
+                        </div>
+                        <div class="component-item">
+                            <div class="component-icon">
+                                <i class="fas fa-snowflake"></i>
+                            </div>
+                            <h4>Evaporator Coils</h4>
+                            <p>Absorb heat from the refrigerator interior, cooling the air</p>
+                        </div>
+                        <div class="component-item">
+                            <div class="component-icon">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <h4>Expansion Valve</h4>
+                            <p>Regulates refrigerant flow between high and low pressure sides</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interactive Compressor Diagram -->
+            <div class="compressor-diagram">
+                <h3>Interactive Compressor Diagram</h3>
+                <p>Hover over the points to learn about different compressor components</p>
+                
+                <div class="diagram-container">
+                    <img src="./img/comp.png" alt="Compressor Diagram" class="diagram-image">
+                    
+                    <div class="diagram-point point-1">
+                        <div class="point-info">
+                            <h4>Motor</h4>
+                            <p>Powers the compressor pump to circulate refrigerant</p>
+                        </div>
+                    </div>
+                    
+                    <div class="diagram-point point-2">
+                        <div class="point-info">
+                            <h4>Piston</h4>
+                            <p>Compresses the refrigerant gas to increase pressure</p>
+                        </div>
+                    </div>
+                    
+                    <div class="diagram-point point-3">
+                        <div class="point-info">
+                            <h4>Discharge Valve</h4>
+                            <p>Releases high-pressure refrigerant to condenser coils</p>
+                        </div>
+                    </div>
+                    
+                    <div class="diagram-point point-4">
+                        <div class="point-info">
+                            <h4>Suction Valve</h4>
+                            <p>Draws in low-pressure refrigerant from evaporator</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Refrigerator Types Section -->
+    <section class="fridge-types">
+        <div class="container">
+            <div class="section-title">
+                <h2>Types of Refrigerators We Service</h2>
+                <p>We repair all makes and models of refrigerators</p>
+            </div>
+            
+            <div class="types-grid">
+                <div class="type-card">
+                    <div class="type-image">
+                        <img src="https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Single Door Refrigerator">
+                    </div>
+                    <div class="type-content">
+                        <h3>Single Door</h3>
+                        <p>Compact and energy-efficient refrigerators perfect for small families or as a secondary unit.</p>
+                    </div>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-image">
+                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Double Door Refrigerator">
+                    </div>
+                    <div class="type-content">
+                        <h3>Double Door</h3>
+                        <p>Feature separate freezer and refrigerator compartments with ample storage space.</p>
+                    </div>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-image">
+                        <img src="./img/side.png" alt="Side-by-Side Refrigerator">
+                    </div>
+                    <div class="type-content">
+                        <h3>Side-by-Side</h3>
+                        <p>Vertical design with freezer on one side and refrigerator on the other for easy access.</p>
+                    </div>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-image">
+                        <img src="./img/french.png" alt="French Door Refrigerator">
+                    </div>
+                    <div class="type-content">
+                        <h3>French Door</h3>
+                        <p>Premium design with double refrigerator doors on top and freezer drawer below.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Why Choose Us Section -->
     <section class="why-us" id="why-us">
@@ -799,6 +1156,21 @@
             button.addEventListener('mouseenter', () => {
                 button.style.opacity = '1';
                 button.style.transform = 'translateX(0)';
+            });
+        });
+        
+        // Component interaction enhancement
+        document.addEventListener('DOMContentLoaded', function() {
+            const componentItems = document.querySelectorAll('.component-item');
+            
+            componentItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.05)';
+                });
             });
         });
     </script>
